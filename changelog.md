@@ -1,6 +1,6 @@
 # babel-plugin-transform-require-extensions changelog
 
-## Next
+## 1.0.1
 
 ### Patch
 
