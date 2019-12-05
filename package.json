@@ -1,0 +1,52 @@
+{
+  "name": "babel-plugin-transform-require-extensions",
+  "version": "1.0.0",
+  "description": "A Babel plugin that transforms specified require path file extensions.",
+  "license": "MIT",
+  "author": {
+    "name": "Jayden Seric",
+    "email": "me@jaydenseric.com",
+    "url": "https://jaydenseric.com"
+  },
+  "repository": "github:jaydenseric/babel-plugin-transform-require-extensions",
+  "homepage": "https://github.com/jaydenseric/babel-plugin-transform-require-extensions#readme",
+  "bugs": "https://github.com/jaydenseric/babel-plugin-transform-require-extensions/issues",
+  "funding": "https://github.com/sponsors/jaydenseric",
+  "keywords": [
+    "babel",
+    "plugin",
+    "transform",
+    "require",
+    "extensions",
+    "mjs",
+    "esm"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-env": "^11.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import-order-alphabetical": "^1.0.0",
+    "eslint-plugin-jsdoc": "^18.4.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
+    "test-director": "^1.0.0"
+  },
+  "scripts": {
+    "test": "npm run test:eslint && npm run test:prettier && npm run test:api",
+    "test:eslint": "eslint .",
+    "test:prettier": "prettier '**/*.{json,yml,md}' -l",
+    "test:api": "node test",
+    "prepublishOnly": "npm test"
+  }
+}
