@@ -9,6 +9,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Use [`coverage-node`](https://npm.im/coverage-node) for test code coverage.
 - Use strict mode in scripts.
 - Use a shorter variable name in tests.
 
