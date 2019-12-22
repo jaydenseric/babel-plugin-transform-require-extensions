@@ -41,4 +41,4 @@ By default `.mjs` extensions are transformed to `.js`. The `extensions` option c
 
 ## Support
 
-- Node.js v8.10+
+- Node.js v10+
