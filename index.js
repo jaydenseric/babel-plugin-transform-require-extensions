@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * A Babel plugin that replaces specified require path file extensions.
  * @param {object} babel Current Babel object.

@@ -9,6 +9,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Use strict mode in scripts.
 
 ## 1.0.1
 
