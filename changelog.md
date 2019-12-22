@@ -10,6 +10,7 @@
 
 - Updated dev dependencies.
 - Use strict mode in scripts.
+- Use a shorter variable name in tests.
 
 ## 1.0.1
 
