@@ -1,5 +1,11 @@
 # babel-plugin-transform-require-extensions changelog
 
+## Next
+
+### Patch
+
+- Updated the [`test-director`](https://npm.im/test-director) dev dependency.
+
 ## 2.0.0
 
 ### Major
