@@ -4,7 +4,7 @@
 
 ### Patch
 
-- Updated the [`test-director`](https://npm.im/test-director) dev dependency.
+- Updated dev dependencies.
 
 ## 2.0.0
 
