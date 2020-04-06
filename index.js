@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * A Babel plugin that replaces specified require path file extensions.
@@ -16,20 +16,20 @@ module.exports = function babelPluginTransformRequireExtensions(
     visitor: {
       CallExpression(path) {
         if (path.node.callee.name === 'require') {
-          const [specifier] = path.node.arguments
+          const [specifier] = path.node.arguments;
           if (specifier && specifier.type === 'StringLiteral')
             for (const extension in extensions) {
-              const regExp = new RegExp(`${extension}$`)
+              const regExp = new RegExp(`${extension}$`);
               if (regExp.test(specifier.value)) {
                 specifier.value = specifier.value.replace(
                   regExp,
                   extensions[extension]
-                )
-                break
+                );
+                break;
               }
             }
         }
-      }
-    }
-  }
-}
+      },
+    },
+  };
+};

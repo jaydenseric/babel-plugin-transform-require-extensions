@@ -1,20 +1,20 @@
-'use strict'
+'use strict';
 
-const assert = require('assert')
-const babel = require('@babel/core')
-const { TestDirector } = require('test-director')
-const babelPluginTransformRequireExtensions = require('.')
+const assert = require('assert');
+const babel = require('@babel/core');
+const { TestDirector } = require('test-director');
+const babelPluginTransformRequireExtensions = require('.');
 
-const tests = new TestDirector()
+const tests = new TestDirector();
 
 tests.add('`extension` option, default.', () => {
   assert.strictEqual(
     babel.transform('require("a.mjs");', {
-      plugins: [babelPluginTransformRequireExtensions]
+      plugins: [babelPluginTransformRequireExtensions],
     }).code,
     'require("a.js");'
-  )
-})
+  );
+});
 
 tests.add('`extension` option, one extension.', () => {
   assert.strictEqual(
@@ -24,15 +24,15 @@ tests.add('`extension` option, one extension.', () => {
           babelPluginTransformRequireExtensions,
           {
             extensions: {
-              '.a': '.b'
-            }
-          }
-        ]
-      ]
+              '.a': '.b',
+            },
+          },
+        ],
+      ],
     }).code,
     'require("a.b");'
-  )
-})
+  );
+});
 
 tests.add('`extension` option, multiple extensions.', () => {
   assert.strictEqual(
@@ -43,15 +43,15 @@ tests.add('`extension` option, multiple extensions.', () => {
           {
             extensions: {
               '.aa': '.ab',
-              '.ba': '.bb'
-            }
-          }
-        ]
-      ]
+              '.ba': '.bb',
+            },
+          },
+        ],
+      ],
     }).code,
     'require("a.ab");\n\nrequire("a.bb");'
-  )
-})
+  );
+});
 
 tests.add('Period in filename.', () => {
   assert.strictEqual(
@@ -61,15 +61,15 @@ tests.add('Period in filename.', () => {
           babelPluginTransformRequireExtensions,
           {
             extensions: {
-              '.mjs': '.js'
-            }
-          }
-        ]
-      ]
+              '.mjs': '.js',
+            },
+          },
+        ],
+      ],
     }).code,
     'require("a.b.js");'
-  )
-})
+  );
+});
 
 tests.add('Unspecified extensions preserved.', () => {
   assert.strictEqual(
@@ -79,14 +79,14 @@ tests.add('Unspecified extensions preserved.', () => {
           babelPluginTransformRequireExtensions,
           {
             extensions: {
-              '.mjs': '.js'
-            }
-          }
-        ]
-      ]
+              '.mjs': '.js',
+            },
+          },
+        ],
+      ],
     }).code,
     'require("a.json");'
-  )
-})
+  );
+});
 
-tests.run()
+tests.run();
