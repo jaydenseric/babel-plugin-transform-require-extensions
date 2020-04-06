@@ -1,6 +1,6 @@
 'use strict';
 
-const assert = require('assert');
+const { strictEqual } = require('assert');
 const babel = require('@babel/core');
 const { TestDirector } = require('test-director');
 const babelPluginTransformRequireExtensions = require('.');
@@ -8,7 +8,7 @@ const babelPluginTransformRequireExtensions = require('.');
 const tests = new TestDirector();
 
 tests.add('`extension` option, default.', () => {
-  assert.strictEqual(
+  strictEqual(
     babel.transform('require("a.mjs");', {
       plugins: [babelPluginTransformRequireExtensions],
     }).code,
@@ -17,7 +17,7 @@ tests.add('`extension` option, default.', () => {
 });
 
 tests.add('`extension` option, one extension.', () => {
-  assert.strictEqual(
+  strictEqual(
     babel.transform('require("a.a");', {
       plugins: [
         [
@@ -35,7 +35,7 @@ tests.add('`extension` option, one extension.', () => {
 });
 
 tests.add('`extension` option, multiple extensions.', () => {
-  assert.strictEqual(
+  strictEqual(
     babel.transform('require("a.aa");\n\nrequire("a.ba");', {
       plugins: [
         [
@@ -54,7 +54,7 @@ tests.add('`extension` option, multiple extensions.', () => {
 });
 
 tests.add('Period in filename.', () => {
-  assert.strictEqual(
+  strictEqual(
     babel.transform('require("a.b.mjs");', {
       plugins: [
         [
@@ -72,7 +72,7 @@ tests.add('Period in filename.', () => {
 });
 
 tests.add('Unspecified extensions preserved.', () => {
-  assert.strictEqual(
+  strictEqual(
     babel.transform('require("a.json");', {
       plugins: [
         [
